@@ -39,7 +39,7 @@ $names=$pdo->query($sql);
  </div>
   </div>
 <script type="text/javascript">
-function delUser (id) {
+function delUser (id,name) {
 	if(window.confirm("确认删除吗？")){
 		window.location="./admin/del_use.php?id="+id;
 	}
