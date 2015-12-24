@@ -1,0 +1,33 @@
+body {
+  padding-top: 50px;
+  background-color: #fff;
+  color: black; }
+
+table {
+  text-align: center; }
+  table th {
+    text-align: center; }
+  table .btn {
+    width: 68px;
+    margin-left: 20px; }
+
+.sidebar a {
+  color: #5BC0DE;
+  font-weight: bold; }
+  .sidebar a:hover {
+    color: red; }
+
+.main {
+  padding-top: -50px; }
+
+.nav-sidebar {
+  margin-top: 20px;
+  font-size: 17px; }
+  .nav-sidebar li {
+    height: 40px;
+    text-align: center; }
+
+.date {
+  margin-top: 10px; }
+
+/*# sourceMappingURL=btn.css.map */

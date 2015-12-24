@@ -1,23 +1,13 @@
 <?php
 //获取考勤表 
-require_once('../admin/connect.php');
+require_once('./admin/connect.php');
 //设置sql语句在指定的时间戳范围
 $date=$_REQUEST["date"];
-
  ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>考勤列表</title>
-	<link rel="stylesheet" href="../css/bootstrap.css">
-	<link rel="stylesheet" href="../css/btn.css">
-</head>
-<body>
-	<?php include'../segment/menu.php' ?>
+<?php include'./segment/menu.php' ?>
         <div class="col-md-10 main">
-<ul class="pull-right">
+<ul class="pull-right date">
 <a target="mainFrame" href="view_works_list.php?date=today" class="btn btn-default">今天</a>
 <a target="mainFrame" href="view_works_list.php?date=yesterday" class="btn btn-default">昨天</a>
 <a target="mainFrame" href="view_works_list.php?date=month" class="btn btn-default">本月</a>
@@ -76,5 +66,4 @@ $names=$pdo->query($sql);
 		window.location="edit_work.php?id="+id;
 	}
 </script>	
-</body>
-</html>
+<?php include'./segment/footer.php' ?>

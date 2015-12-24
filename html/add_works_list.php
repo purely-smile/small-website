@@ -1,5 +1,5 @@
 <?php 
-require_once('../admin/connect.php');
+require_once('./admin/connect.php');
 
 //排除重复添加的可能
 $sqlname='select * from name';
@@ -7,17 +7,8 @@ $sqlname='select * from name';
 $names=$pdo->query($sqlname);
  ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>添加考勤</title>
-	<link rel="stylesheet" href="../css/bootstrap.css">
-	<link rel="stylesheet" href="../css/btn.css">
-</head>
-<body>
 <!-- 添加菜单片段 -->
-	<?php include'../segment/menu.php' ?>
+	<?php include'./segment/menu.php' ?>
 <div class="col-md-10 main">
 	<h3>默认点击一下添加4小时</h3>
 	<table class="table table-bordered">
@@ -54,7 +45,7 @@ $names=$pdo->query($sqlname);
 				<td><a class="btn btn-success" <?php
 				//判断当天是否添加过数据，或者是否是下午 
 				if(!$flag||$timecur>$timemid){
-				echo "href=../admin/add_list.php?name=".$key['name'];	
+				echo "href=./admin/add_list.php?name=".$key['name'];	
 				}
 
 				 ?> title="添加">
@@ -85,6 +76,6 @@ $names=$pdo->query($sqlname);
 		<?php endforeach;?>
 		</tbody>
 	</table>
-</div>	
-</body>
-</html>
+</div>
+	
+<?php include'./segment/footer.php' ?>

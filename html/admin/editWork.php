@@ -8,6 +8,6 @@ if($time>10){
 $sql="update worklist set time='$time' where id=$id";
 $pdo->query($sql);
 }
-echo "<script>window.location='../html/view_works_list.php?date=today'</script>";
+echo "<script>window.location='../view_works_list.php?date=today'</script>";
 
  ?>

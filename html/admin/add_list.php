@@ -19,5 +19,5 @@ $addsql="insert into worklist(name,date) values('$name','$date')";
 echo $addsql;
 $pdo->exec($addsql);
 }
-echo "<script>window.location='../html/add_works_list.php';</script>"
+echo "<script>window.location='../add_works_list.php';</script>"
  ?>

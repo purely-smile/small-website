@@ -1,24 +1,14 @@
 <?php 
-require_once('../admin/connect.php');
+require_once('./admin/connect.php');
 $sql='select * from name';
 $names=$pdo->query($sql);
 //var_dump($names);
-
  ?>
 
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>人员列表</title>
- 	<link rel="stylesheet" href="../css/bootstrap.css">
- 	<link rel="stylesheet" href="../css/btn.css">
- </head>
- <body>
- 	<?php include'../segment/menu.php' ?>
+<?php include'./segment/menu.php' ?>
         <div class="col-md-10 main">
         <h3>添加人员</h3>
-        <form action="../admin/add_user.php" method="get" role="from">
+        <form action="./admin/add_user.php" method="get" role="from">
             <div class="form-group">
                 <input class="form-control" type="text" name="username" id="user" placeholder="请输入名字">
             </div>
@@ -51,12 +41,12 @@ $names=$pdo->query($sql);
 <script type="text/javascript">
 function delUser (id) {
 	if(window.confirm("确认删除吗？")){
-		window.location="../admin/del_use.php?id="+id;
+		window.location="./admin/del_use.php?id="+id;
 	}
 }
 function editUser(id){
 	window.location="edit_use.php?id="+id;
 }
-</script>	
- </body>
- </html>
+</script>
+	
+<?php include'./segment/footer.php' ?>

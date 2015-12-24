@@ -1,5 +1,5 @@
 <?php
-require_once('../admin/connect.php');
+require_once('./admin/connect.php');
 //判断url传递的date值
 $date=$_REQUEST["date"];
 //var_dump($names);
@@ -9,18 +9,10 @@ $total_time=number_format(0, 1);
 $name_list=array();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>工资结算</title>
-	<link rel="stylesheet" href="../css/bootstrap.css">
-	<link rel="stylesheet" href="../css/btn.css">
-</head>
-<body>
-	<?php include'../segment/menu.php' ?>
-        <div class="col-md-10 main">
-<div class="pull-right">
+<?php include'./segment/menu.php' ?>
+
+<div class="col-md-10 main">
+<div class="pull-right date">
 <ul >
 <a target="mainFrame" href="view_salary_list.php?date=today" class="btn btn-default">今天</a>
 <a target="mainFrame" href="view_salary_list.php?date=yesterday" class="btn btn-default">昨天</a>
@@ -85,5 +77,5 @@ $name_list=array_unique($name_list);
 </table>
 	</div>
 	</div>
-</body>
-</html>
+	
+<?php include'./segment/footer.php' ?>
