@@ -12,24 +12,22 @@ $names=$pdo->query($sql);
  	<meta charset="UTF-8">
  	<title>人员列表</title>
  	<link rel="stylesheet" href="../css/bootstrap.css">
+ 	<link rel="stylesheet" href="../css/btn.css">
  </head>
- <style type="text/css">
-
-
-th{
-	background-color: #ccc;
-}
-table{
-	font: #230230230;
-	font-size: 20px;
-}
-.btn{
-	margin-left: 20px;
-}
- </style>
  <body>
- <div>
+ 	<?php include'../segment/menu.php' ?>
+        <div class="col-md-10 main">
+        <h3>添加人员</h3>
+        <form action="../admin/add_user.php" method="get" role="from">
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" id="user" placeholder="请输入名字">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-default">添加</button>
+        </form>
+ 
  <h3>人员列表</h3>
+<div class="table-responsive">
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -49,8 +47,7 @@ table{
 	</tbody>
 </table>
  </div>
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.js"></script>
+  </div>
 <script type="text/javascript">
 function delUser (id) {
 	if(window.confirm("确认删除吗？")){

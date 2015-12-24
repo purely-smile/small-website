@@ -2,10 +2,8 @@
 //获取考勤表 
 require_once('../admin/connect.php');
 //设置sql语句在指定的时间戳范围
-$sql="select * from worklist where date between '{$timestart}' and '{$timeend}'";
-//echo $sql;
-$names=$pdo->query($sql);
-//var_dump($names);
+$date=$_REQUEST["date"];
+
  ?>
 
 <!DOCTYPE html>
@@ -14,9 +12,39 @@ $names=$pdo->query($sql);
 	<meta charset="UTF-8">
 	<title>考勤列表</title>
 	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/btn.css">
 </head>
 <body>
- <h3>考勤表</h3>
+	<?php include'../segment/menu.php' ?>
+        <div class="col-md-10 main">
+<ul class="pull-right">
+<a target="mainFrame" href="view_works_list.php?date=today" class="btn btn-default">今天</a>
+<a target="mainFrame" href="view_works_list.php?date=yesterday" class="btn btn-default">昨天</a>
+<a target="mainFrame" href="view_works_list.php?date=month" class="btn btn-default">本月</a>
+</ul>
+<h3>
+	<?php 
+
+if($date=='today'){
+echo "今天考勤信息";
+}elseif ($date=='yesterday') {
+echo "昨天考勤信息";
+$timestart=$timeyesstart;
+$timeend=$timeyesend;
+}elseif($date=='month'){
+echo "本月考勤信息";
+$timestart=$monthstart;
+$timeend=$monthend;
+}else{
+}
+
+$sql="select * from worklist where date between '{$timestart}' and '{$timeend}'";
+//echo $sql;
+$names=$pdo->query($sql);
+//var_dump($names);
+	 ?>
+</h3>
+
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -24,6 +52,7 @@ $names=$pdo->query($sql);
 			<th>姓&nbsp;&nbsp;名</th>
 			<th>工作时间</th>
 			<th>添加日期</th>
+			<th>操&nbsp;&nbsp;作</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,6 +69,12 @@ $names=$pdo->query($sql);
 		</tr>
 		<?php endforeach;?>
 	</tbody>
-</table>	
+</table>
+ </div>
+<script type="text/javascript">
+	function editWorks(id){
+		window.location="edit_work.php?id="+id;
+	}
+</script>	
 </body>
 </html>

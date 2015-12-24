@@ -7,17 +7,19 @@ $sqlname='select * from name';
 $names=$pdo->query($sqlname);
  ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>添加考勤</title>
 	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/btn.css">
 </head>
 <body>
-<div>
-<h3>默认点击一下添加4小时</h3>
+<!-- 添加菜单片段 -->
+	<?php include'../segment/menu.php' ?>
+<div class="col-md-10 main">
+	<h3>默认点击一下添加4小时</h3>
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -33,22 +35,29 @@ $names=$pdo->query($sqlname);
 			<?php
 			//获取当前遍历到的name 
 			$name=$key['name'];
-			//设置遍历worklist的语句
-			$namesql="select * from worklist where name='{$name}'";
+			//设置遍历worklist的语句,条件是指定的时间内
+			$namesql="select * from worklist where name='{$name}' and date between '{$timestart}' and '{$timeend}'";
+			//echo $namesql;
 			//执行sql语句
 			$flags=$pdo->query($namesql);
+			//获取受影响条目
+			$flag = $flags->rowCount();
 			//遍历当前的考勤表
 			foreach ($flags as $time){
 			}
-			//获取受影响条目
-			$flag = $flags->rowCount();
 			 ?>
 			 <!-- 开始循环填充数据 -->
 			<tr>
 			<!-- 填充id -->
 				<td><?php echo $key['id'];?></td>
 			<!-- 填充name，同时给予a链接，便于添加 -->
-				<td><a class="btn btn-success" href="../admin/add_list.php?name=<?php echo $key['name'];?>" title="姓名">
+				<td><a class="btn btn-success" <?php
+				//判断当天是否添加过数据，或者是否是下午 
+				if(!$flag||$timecur>$timemid){
+				echo "href=../admin/add_list.php?name=".$key['name'];	
+				}
+
+				 ?> title="添加">
 				<?php echo $name;?></a></td>
 			<!-- 判断是否工作，如果有返回工时 -->
 				<td><?php
@@ -59,23 +68,19 @@ $names=$pdo->query($sqlname);
 				}
 				 ?></td>
 			<!-- 显示状态信息，如果有蓝色，没有红色。同时给予对应的状态 -->
-				<td class="btn 
-					<?php 
+				<td class="<?php 
 					if($flag){
 						echo "btn-info";
 					}else{
 						echo "btn-danger";
 					}
-					 ?>
-				">
-					<?php 
+					 ?>"><?php 
 					if($flag){
 						echo "已添加";
 					}else{
 						echo "待添加";
 					}
-					 ?>
-				</td>
+					 ?></td>
 			</tr>
 		<?php endforeach;?>
 		</tbody>

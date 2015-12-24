@@ -1,4 +1,3 @@
-
 <h3>系统信息</h3>
 <table class="table table-bordered table-hover">
 	<tr>
