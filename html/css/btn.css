@@ -6,10 +6,11 @@ body {
 table {
   text-align: center; }
   table th {
-    text-align: center; }
+    text-align: center;
+    padding-top: 50px; }
   table .btn {
     width: 68px;
-    margin-left: 20px; }
+    margin-left: -4px; }
 
 .sidebar a {
   color: #5BC0DE;
@@ -29,5 +30,8 @@ table {
 
 .date {
   margin-top: 10px; }
+
+.choice-time {
+  margin-right: 130px; }
 
 /*# sourceMappingURL=btn.css.map */

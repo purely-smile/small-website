@@ -16,11 +16,13 @@ $names=$pdo->query($sqlname);
 			<tr>
 				<th>编号</th>
 				<th>姓名</th>
-				<th>工时</th>
+				<th>上午</th>
+				<th>下午</th>
 				<th>状态</th>
 			</tr>
 		</thead>
 		<tbody>
+
 		<?php foreach ($names as $key):?>
 
 			<?php
@@ -42,23 +44,24 @@ $names=$pdo->query($sqlname);
 			<!-- 填充id -->
 				<td><?php echo $key['id'];?></td>
 			<!-- 填充name，同时给予a链接，便于添加 -->
-				<td><a class="btn btn-success" <?php
-				//判断当天是否添加过数据，或者是否是下午 
-				if(!$flag||$timecur>$timemid){
-				echo "href=./admin/add_list.php?name=".$key['name'];	
-				}
-
-				 ?> title="添加">
+				<td><a class="btn btn-success" title="添加">
 				<?php echo $name;?></a></td>
 			<!-- 判断是否工作，如果有返回工时 -->
 				<td><?php
 				if($flag){
-					echo $time['time'];
+					echo $time['am'];
 				}else{
-					echo "无";
+					echo "0.0";
 				}
 				 ?></td>
 			<!-- 显示状态信息，如果有蓝色，没有红色。同时给予对应的状态 -->
+				<td><?php
+				if($flag){
+					echo $time['pm'];
+				}else{
+					echo "0.0";
+				}
+				 ?></td>
 				<td class="<?php 
 					if($flag){
 						echo "btn-info";
@@ -79,3 +82,39 @@ $names=$pdo->query($sqlname);
 </div>
 	
 <?php include'./segment/footer.php' ?>
+
+<script type="text/javascript">
+	//为每个添加按钮绑定点击事件
+	$(".btn-success").click(function(){
+	//定义日期对象
+	var date=new Date();
+	that=this;
+	parent=$(this).parent();
+	name=$(parent[0]).text()
+	//去除空格
+	name=$.trim(name);
+	console.log(name);
+	am=$(parent).next().text();
+	bm=$(parent).next().next().text();
+	//当前时间在下午时间
+	if(date.getHours()>12){
+	//上午有工时，下午没
+	if(am==4.0&&bm==0.0){
+	$(that).attr("href","./admin/add_list.php?time=ap&name="+name);
+	//上午没工时，下午
+	}else if(am==0.0&&bm==0.0){
+	$(that).attr("href","./admin/add_list.php?time=pm&name="+name);
+	console.log(date.getHours());
+	}
+	//在上午的时候
+	}else{
+		if(am==0.0&&bm==0.0){
+	$(that).attr("href","./admin/add_list.php?time=am&name="+name);
+		}else if(bm!=0.0){
+			alert('当前时间在上午，下午工时有数据，请检查！');
+		}
+	}
+
+
+	})
+</script>

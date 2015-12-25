@@ -31,22 +31,32 @@ $names=$pdo->query($sql);
 		<tr>
 			<td><?php echo $key['id'];?></td>
 			<td><?php echo $key['name'];?></td>
-			<td align="center"><input class="btn btn-info" type="button" value="修改" onclick="editUser(<?php echo $key['id'];?>)"><input class="btn btn-danger" type="button" value="删除" onclick="delUser(<?php echo $key['id'];?>)"></td>
+			<td align="center"><input class="btn btn-info" type="button" value="修改" ><input class="btn btn-danger" type="button" value="删除" ></td>
 		</tr>
 		<?php endforeach;?>
 	</tbody>
 </table>
  </div>
   </div>
-<script type="text/javascript">
-function delUser (id,name) {
-	if(window.confirm("确认删除吗？")){
-		window.location="./admin/del_use.php?id="+id;
-	}
-}
-function editUser(id){
-	window.location="edit_use.php?id="+id;
-}
-</script>
 	
 <?php include'./segment/footer.php' ?>
+<script type="text/javascript">
+	$(".btn-info").click(function(){
+		parent=$(this).parents()[1];
+		//获取tr下的id文本内容
+		id=$(parent).find('td').eq(0).text();
+		window.location="edit_use.php?id="+id;
+	})	
+	$(".btn-danger").click(function(){
+		//获取this的上上父对象
+		parent=$(this).parents()[1];
+		//获取tr下的id文本内容
+		id=$(parent).find('td').eq(0).text();
+		//获取tr下的name文本内容
+		name=$(parent).find('td').eq(1).text();
+		if(window.confirm("确认删除"+name+"吗？")){
+ 		window.location="./admin/del_use.php?id="+id;
+		}
+	});
+
+</script>

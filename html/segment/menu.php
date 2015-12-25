@@ -8,6 +8,7 @@
     <title>后台管理</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/btn.css">
+    <link rel="stylesheet" href="./plugins/pikaday/pikaday.css">
 </head>
 <body>
 <!-- 头部信息 -->

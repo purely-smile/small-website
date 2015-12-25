@@ -8,10 +8,13 @@ body{
 table {
     text-align: center;
     th{
-    text-align: center;}
+    text-align: center;
+    padding-top: 50px;
+
+    }
     .btn {
     width: 68px;
-    margin-left: 20px;
+    margin-left: -4px;
 }
 }
 //设置菜单颜色
@@ -37,4 +40,7 @@ table {
 }
 .date{
     margin-top: 10px;
+}
+.choice-time{
+    margin-right: 130px;
 }

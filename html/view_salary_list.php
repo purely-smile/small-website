@@ -13,11 +13,11 @@ $name_list=array();
 
 <div class="col-md-10 main">
 <div class="pull-right date">
-<ul >
+
 <a target="mainFrame" href="view_salary_list.php?date=today" class="btn btn-default">今天</a>
 <a target="mainFrame" href="view_salary_list.php?date=yesterday" class="btn btn-default">昨天</a>
 <a target="mainFrame" href="view_salary_list.php?date=month" class="btn btn-default">本月</a>
-</ul>
+
 </div>
 <h3><?php 
 if($date=='today'){
@@ -31,9 +31,11 @@ echo "本月工资列表";
 $timestart=$monthstart;
 $timeend=$monthend;
 }else{
+	echo "今天工资列表";
 }
 //默认获取当天的考勤记录
 $sql="select * from worklist where date between '{$timestart}' and '{$timeend}'";
+//echo $sql;
 $names=$pdo->query($sql);
 //遍历获取到的数组，然后获取到的名字
 foreach ($names as $key){	
@@ -55,18 +57,19 @@ $name_list=array_unique($name_list);
 	<tbody>
 		<!-- 遍历数组内的名字,分别获取对应的工时 -->
 		<?php foreach ($name_list as $list):?>
-		<!-- 获取指定名字的工单 -->
-		<?php $list="select name,time from worklist where name='{$list}'";
+		<!-- 获取指定名字的工单的指定日期的列表 -->
+		<?php $list="select * from worklist where name='{$list}' and date between '{$timestart}' and '{$timeend}'";
 		//echo $list;
 		$time_list=$pdo->query($list);
 		foreach($time_list as $list){
-		$total_time=bcadd($total_time, $list['time'],1);
+		$total_time=bcadd($total_time, $list['am'],1);
+		$total_time=bcadd($total_time, $list['pm'],1);
 		$total_salary=$total_time*50/8;
 		//echo $total_time;
 		}
  ?>		
 		<tr>
-			<td><a class="btn btn-success" href="view_detail_salary.php?name=<?php echo $list['name']."&date=".$date; ?>" title=""><?php echo $list['name']; ?></a></td>
+			<td><a class="btn btn-success" href="view_detail_salary.php?name=<?php echo $list['name']."&date=".$date; ?>" title="点击查看详情"><?php echo $list['name']; ?></a></td>
 			<td><?php echo $total_time; ?></td>
 			<td><?php echo $total_salary."元"; ?></td>
 			<!-- 重新初始化工资,进入下个循环 -->

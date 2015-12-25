@@ -21,3 +21,13 @@
 		<td><?php echo date("Y/m/d H:i:s"); ?></td>
 	</tr>
 </table>
+<h3>系统配置</h3>
+<form method="get" action="./admin/set_salary.php">
+	<table class="table table-bordered table-hover">
+<tr>
+	<th>设置每日工资(元)</th>
+	<td><input type="text" name="salary" value="50"></td>
+	<td><input type="submit"  value="更改" class="btn btn-info"></td>
+</tr>
+</table>
+</form>

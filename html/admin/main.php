@@ -22,3 +22,10 @@
 		<td><?php echo date("Y/m/d H:i:s"); ?></td>
 	</tr>
 </table>
+<h3>系统配置</h3>
+<table class="table table-bordered table-hover">
+<tr>
+	<td>每日工资</td>
+	<td></td>
+</tr>
+</table>
