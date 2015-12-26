@@ -12,6 +12,7 @@ $name_list=array();
 
 <?php include'../segment/menu.php' ?>
 
+<div class="col-md-10 main">
 <h3 class="pull-left"><?php 
 if($date=='today'){
 echo "今天工资列表";
@@ -29,6 +30,7 @@ $timeend=$monthend;
 ?>
 </h3>
 <?php include'../segment/salary_list.php' ?>
+	</div>
 
 	
 <?php include'../segment/footer.php' ?>

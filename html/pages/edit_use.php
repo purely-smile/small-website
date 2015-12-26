@@ -7,6 +7,7 @@ $names=$pdo->query($sql);
 ?>
 
 <?php include'../segment/menu.php' ?>
+ <div class="col-md-10 main">
  <?php foreach ($names as $key): ?>
  <h3>修改联系人</h3>
  <form action="../cores/editUse.php" method="get">
@@ -16,4 +17,5 @@ $names=$pdo->query($sql);
  <input type="submit" value="提交">
 
  </form>
+ </div>
 <?php include'../segment/footer.php' ?>

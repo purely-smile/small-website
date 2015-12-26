@@ -3,6 +3,7 @@
 include'../segment/find_date.php';
 //引入页面基础菜单模块
 include'../segment/menu.php'; ?>
+        <div class="col-md-10 main">
 
 <h3 class="pull-left"><?php 
     if ($start&&$end) {
@@ -14,6 +15,7 @@ include'../segment/menu.php'; ?>
     
 	</h3>
 <?php include'../segment/work_list.php'; ?>
+	</div>
 <?php include'../segment/footer.php'; ?>
 
  <?php include'../segment/datejs.php' ;?>

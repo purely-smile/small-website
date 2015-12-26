@@ -6,6 +6,7 @@ $date=$_REQUEST["date"];
  ?>
 
 <?php include'../segment/menu.php' ?>
+        <div class="col-md-10 main">
 
 <h3 class="pull-left">
 	<?php 
@@ -28,6 +29,7 @@ $timeend=$monthend;
 
 <?php include'../segment/work_list.php' ?>
 	
+ </div>
 
 <?php include'../segment/footer.php' ?>
 

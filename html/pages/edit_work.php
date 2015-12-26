@@ -10,6 +10,7 @@ foreach($names as $key){
 }
  ?>
 <?php include'../segment/menu.php' ?>
+ <div class="col-md-10 main">
 
 	<form action="../cores/editWork.php" method="get" role="form" >
 		<table>
@@ -40,5 +41,6 @@ foreach($names as $key){
 
 		
 	</form>
+</div>
 	
 <?php include'../segment/footer.php' ?>

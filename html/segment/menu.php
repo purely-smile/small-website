@@ -27,12 +27,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../admin/index.php" title="系统信息" class="active">系统信息</a></li>
-            <li><a href="../../admin/pages/view_use_list.php" title="员工操作" >员工操作</a></li>
-            <li><a href="../../admin/pages/add_works_list.php" title="添加考勤" >添加考勤</a></li>
-            <li><a href="../../admin/pages/view_works_list.php?date=today" title="查看考勤" >查看考勤</a></li>
-            <li><a href="../../admin/pages/view_salary_list.php?date=today" title="结算工资" >结算工资</a></li>
+            <li><a href="#">待添加</a></li>
+            <li><a href="#">待添加</a></li>
+            <li><a href="#">待添加</a></li>
           </ul>
         </div>
       </div>
     </div>
+<!-- 左侧menu菜单 -->
+<div class="col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li><a href="../../admin/index.php" title="系统信息" class="active">系统信息</a></li>
+		<li><a href="../../admin/pages/view_use_list.php" title="员工操作" >员工操作</a></li>
+		<li><a href="../../admin/pages/add_works_list.php" title="添加考勤" >添加考勤</a></li>
+		<li><a href="../../admin/pages/view_works_list.php?date=today" title="查看考勤" >查看考勤</a></li>
+		<li><a href="../../admin/pages/view_salary_list.php?date=today" title="结算工资" >结算工资</a></li>
+	</ul>
+</div>

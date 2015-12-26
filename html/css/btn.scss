@@ -1,0 +1,46 @@
+//设置背景色，文字颜色
+body{
+	padding-top: 50px;
+	background-color: #fff;
+	color: black;
+}
+//设置表格中文字居中,统一表格按钮宽度
+table {
+    text-align: center;
+    th{
+    text-align: center;
+    padding-top: 50px;
+
+    }
+    .btn {
+    width: 68px;
+    margin-left: -4px;
+}
+}
+//设置菜单颜色
+.sidebar a{
+	color: #5BC0DE;
+	font-weight: bold;
+    &:hover{
+       color: red;
+    }
+}
+
+.main{
+	padding-top: -50px;
+}
+
+.nav-sidebar{
+	margin-top: 20px;
+	font-size: 17px;
+    li{
+       height: 40px;
+	   text-align: center;
+    }
+}
+.date{
+    margin-top: 10px;
+}
+.choice-time{
+    margin-right: 130px;
+}

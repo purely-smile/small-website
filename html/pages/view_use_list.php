@@ -6,6 +6,7 @@ $names=$pdo->query($sql);
  ?>
 
 <?php include'../segment/menu.php' ?>
+        <div class="col-md-10 main">
         <form action="../cores/add_user.php" method="post" class="form-inline">
             <h3 style="display: inline-block">添加人员</h3>
             <input class="form-control" type="text" name="username" id="user" placeholder="请输入名字">
@@ -33,6 +34,7 @@ $names=$pdo->query($sql);
 	</tbody>
 </table>
  </div>
+  </div>
 	
 <?php include'../segment/footer.php' ?>
 <script type="text/javascript">

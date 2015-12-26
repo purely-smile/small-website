@@ -21,7 +21,7 @@
 		<td><?php echo date("Y/m/d H:i:s"); ?></td>
 	</tr>
 </table>
-<!-- <h3>系统配置</h3>
+<h3>系统配置</h3>
 <form method="get" action="../cores/set_salary.php">
 	<table class="table table-bordered table-hover">
 <tr>
@@ -30,4 +30,4 @@
 	<td><input type="submit"  value="更改" class="btn btn-info"></td>
 </tr>
 </table>
-</form> -->
+</form>
