@@ -5,15 +5,17 @@ $names=$pdo->query($sql);
 //var_dump($names);
  ?>
 	 
-
+<div></div>
 <div class="pull-right date">
 <div>
 <div>
 	
 </div>
-<form action="find_date.php" method="get">
-<input type="text" id="datepicker" name="start">到
-<input type="text" id="datepicker1" name="end">
+<form action="find_works_bydate.php" method="post" class="form-inline">从
+<input class="form-control" type="text" id="datepicker" name="start">到
+<!-- 日期选择器1 -->
+<input class="form-control" type="text" id="datepicker1" name="end">
+<!-- 日期选择器2 -->
 <input class="btn btn-info" type="submit" value="查询">
 
 <a target="mainFrame" href="view_works_list.php?date=today" class="btn btn-default">今天</a>

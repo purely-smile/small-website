@@ -28,5 +28,5 @@ if(!$flag_name){
 	echo $sql;
 	$pdo->query($sql);
 
-echo "<script>window.location='../add_works_list.php';</script>"
+echo "<script>window.location='../pages/add_works_list.php';</script>"
  ?>

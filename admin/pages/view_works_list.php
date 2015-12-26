@@ -1,41 +1,40 @@
-<?php 
-require_once('./admin/connect.php');
-//获取提交过来的日期
-$start=$_GET['start'];
-$end=$_GET['end'];
-//把日期字符串处理成数组
-$arrstart = explode('-',$start);
-$arrend = explode('-',$end);
-//对应的数组转换为具体日期
-$sy=$arrstart[0];
-$sm=$arrstart[1];
-$sd=$arrstart[2];
-
-$ey=$arrend[0];
-$em=$arrend[1];
-$ed=$arrend[2];
-
-$timestart=mktime(0,0,0,$sm,$sd,$sy);
-$timeend=mktime(0,0,0,$em,$ed,$ey);
-
-// echo $findstart."<br>";
-
-// echo $findend;
-// print_r($arrstart);
-// print_r($arrend);
+<?php
+//获取考勤表 
+require_once('../cores/connect.php');
+//设置sql语句在指定的时间戳范围
+$date=$_REQUEST["date"];
  ?>
 
-<?php include'./segment/menu.php' ?>
+<?php include'../segment/menu.php' ?>
         <div class="col-md-10 main">
 
-<h3>指定日期考勤表
-	</h3>
-<?php include'./segment/work_list.php' ?>
-	</div>
-<?php include'./segment/footer.php' ?>
+<h3 class="pull-left">
+	<?php 
 
-    <script src="http://cdn.staticfile.org/moment.js/2.2.1/moment.min.js"></script>
-    <script src="./plugins/pikaday/pikaday.js"></script>
+if($date=='today'){
+echo "今天考勤信息";
+}elseif ($date=='yesterday') {
+echo "昨天考勤信息";
+$timestart=$timeyesstart;
+$timeend=$timeyesend;
+}elseif($date=='month'){
+echo "本月考勤信息";
+$timestart=$monthstart;
+$timeend=$monthend;
+}elseif($date=='find'){
+//include'./admin/find_date.php';
+}
+?>
+</h3>
+
+<?php include'../segment/work_list.php' ?>
+	
+ </div>
+
+<?php include'../segment/footer.php' ?>
+
+    <script src="../plugins/pikaday/moment.js"></script>
+    <script src="../plugins/pikaday/pikaday.js"></script>
     <script>
     var picker = new Pikaday({
         field: document.getElementById('datepicker'),

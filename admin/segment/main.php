@@ -22,7 +22,7 @@
 	</tr>
 </table>
 <h3>系统配置</h3>
-<form method="get" action="./admin/set_salary.php">
+<form method="get" action="../cores/set_salary.php">
 	<table class="table table-bordered table-hover">
 <tr>
 	<th>设置每日工资(元)</th>

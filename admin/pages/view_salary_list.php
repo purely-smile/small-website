@@ -1,5 +1,5 @@
 <?php
-require_once('./admin/connect.php');
+require_once('../cores/connect.php');
 //判断url传递的date值
 $date=$_REQUEST["date"];
 //var_dump($names);
@@ -9,7 +9,7 @@ $total_time=number_format(0, 1);
 $name_list=array();
 ?>
 
-<?php include'./segment/menu.php' ?>
+<?php include'../segment/menu.php' ?>
 
 <div class="col-md-10 main">
 <div class="pull-right date">
@@ -33,6 +33,9 @@ $timeend=$monthend;
 }else{
 	echo "今天工资列表";
 }
+?>
+</h3>
+<?php  
 //默认获取当天的考勤记录
 $sql="select * from worklist where date between '{$timestart}' and '{$timeend}'";
 //echo $sql;
@@ -44,7 +47,7 @@ $name_list[]=$key['name'];}
 $name_list=array_unique($name_list);
 //print_r($name_list);
 
- ?></h3>
+ ?>
  <div class="table-responsive">
 <table class="table table-bordered">
 	<thead>
@@ -81,4 +84,4 @@ $name_list=array_unique($name_list);
 	</div>
 	</div>
 	
-<?php include'./segment/footer.php' ?>
+<?php include'../segment/footer.php' ?>

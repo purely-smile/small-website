@@ -1,5 +1,5 @@
 <?php
-require_once('./admin/connect.php');
+require_once('../cores/connect.php');
 //判断url传递的date值
 $name=$_REQUEST["name"];
 // echo $name;
@@ -25,7 +25,7 @@ $sql="select * from worklist where name='{$name}' and date between '{$timestart}
 $salarys=$pdo->query($sql);
 ?>
 
-<?php include'./segment/menu.php' ?>
+<?php include'../segment/menu.php' ?>
 
 <div class="col-md-10 main">
 <h3><?php echo $name.$date."工资详单"; ?></h3>
@@ -55,4 +55,4 @@ $salarys=$pdo->query($sql);
 </table>
 </div>
 </div>
-<?php include'./segment/footer.php' ?>
+<?php include'../segment/footer.php' ?>

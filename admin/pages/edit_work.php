@@ -1,5 +1,5 @@
 <?php 
-require_once("./admin/connect.php");
+require_once("../cores/connect.php");
 $id=$_REQUEST["id"];
 $sql="select * from worklist where id='{$id}'";
 $names=$pdo->query($sql);
@@ -9,10 +9,10 @@ foreach($names as $key){
 	//print_r($key) ;
 }
  ?>
-<?php include'./segment/menu.php' ?>
+<?php include'../segment/menu.php' ?>
  <div class="col-md-10 main">
 
-	<form action="./admin/editWork.php" method="get" role="form" >
+	<form action="../cores/editWork.php" method="get" role="form" >
 		<table>
 			<thead>
 				<tr>
@@ -43,4 +43,4 @@ foreach($names as $key){
 	</form>
 </div>
 	
-<?php include'./segment/footer.php' ?>
+<?php include'../segment/footer.php' ?>

@@ -1,5 +1,5 @@
 <?php 
-require_once('./admin/connect.php');
+require_once('../cores/connect.php');
 
 //排除重复添加的可能
 $sqlname='select * from name';
@@ -8,7 +8,7 @@ $names=$pdo->query($sqlname);
  ?>
 
 <!-- 添加菜单片段 -->
-	<?php include'./segment/menu.php' ?>
+	<?php include'../segment/menu.php' ?>
 <div class="col-md-10 main">
 	<h3>默认点击一下添加4小时</h3>
 	<table class="table table-bordered">
@@ -81,7 +81,7 @@ $names=$pdo->query($sqlname);
 	</table>
 </div>
 	
-<?php include'./segment/footer.php' ?>
+<?php include'../segment/footer.php' ?>
 
 <script type="text/javascript">
 	//为每个添加按钮绑定点击事件
@@ -100,16 +100,16 @@ $names=$pdo->query($sqlname);
 	if(date.getHours()>12){
 	//上午有工时，下午没
 	if(am==4.0&&bm==0.0){
-	$(that).attr("href","./admin/add_list.php?time=ap&name="+name);
+	$(that).attr("href","../cores/add_list.php?time=ap&name="+name);
 	//上午没工时，下午
 	}else if(am==0.0&&bm==0.0){
-	$(that).attr("href","./admin/add_list.php?time=pm&name="+name);
+	$(that).attr("href","../cores/add_list.php?time=pm&name="+name);
 	console.log(date.getHours());
 	}
 	//在上午的时候
 	}else{
 		if(am==0.0&&bm==0.0){
-	$(that).attr("href","./admin/add_list.php?time=am&name="+name);
+	$(that).attr("href","../cores/add_list.php?time=am&name="+name);
 		}else if(bm!=0.0){
 			alert('当前时间在上午，下午工时有数据，请检查！');
 		}

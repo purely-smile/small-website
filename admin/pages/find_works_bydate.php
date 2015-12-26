@@ -1,40 +1,25 @@
-<?php
-//获取考勤表 
-require_once('./admin/connect.php');
-//设置sql语句在指定的时间戳范围
-$date=$_REQUEST["date"];
- ?>
-
-<?php include'./segment/menu.php' ?>
+<?php 
+//引入指定日期处理模块
+include'../segment/find_date.php';
+//引入页面基础菜单模块
+include'../segment/menu.php'; ?>
         <div class="col-md-10 main">
 
-<h3>
-	<?php 
+<h3 class="pull-left"><?php 
+    if ($start&&$end) {
+        echo $sy.'年'.$sm.'月'.$sd.'日到'.$ey.'年'.$em.'月'.$ed.'日考勤记录';
+    }else{
+        echo "未检测到输入信息，请重试";
+    }
+         ?>
+    
+	</h3>
+<?php include'../segment/work_list.php' ?>
+	</div>
+<?php include'../segment/footer.php' ?>
 
-if($date=='today'){
-echo "今天考勤信息";
-}elseif ($date=='yesterday') {
-echo "昨天考勤信息";
-$timestart=$timeyesstart;
-$timeend=$timeyesend;
-}elseif($date=='month'){
-echo "本月考勤信息";
-$timestart=$monthstart;
-$timeend=$monthend;
-}elseif($date=='find'){
-//include'./admin/find_date.php';
-}
-?>
-</h3>
-
-<?php include'./segment/work_list.php' ?>
-	
- </div>
-
-<?php include'./segment/footer.php' ?>
-
-    <script src="http://cdn.staticfile.org/moment.js/2.2.1/moment.min.js"></script>
-    <script src="./plugins/pikaday/pikaday.js"></script>
+    <script src="../plugins/pikaday/moment.js"></script>
+    <script src="../plugins/pikaday/pikaday.js"></script>
     <script>
     var picker = new Pikaday({
         field: document.getElementById('datepicker'),

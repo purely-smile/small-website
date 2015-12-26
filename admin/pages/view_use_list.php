@@ -1,19 +1,16 @@
 <?php 
-require_once('./admin/connect.php');
+require_once('../cores/connect.php');
 $sql='select * from name';
 $names=$pdo->query($sql);
 //var_dump($names);
  ?>
 
-<?php include'./segment/menu.php' ?>
+<?php include'../segment/menu.php' ?>
         <div class="col-md-10 main">
-        <h3>添加人员</h3>
-        <form action="./admin/add_user.php" method="get" role="from">
-            <div class="form-group">
-                <input class="form-control" type="text" name="username" id="user" placeholder="请输入名字">
-            </div>
-            <br>
-            <button type="submit" class="btn btn-default">添加</button>
+        <form action="../cores/add_user.php" method="post" class="form-inline">
+            <h3 style="display: inline-block">添加人员</h3>
+            <input class="form-control" type="text" name="username" id="user" placeholder="请输入名字">
+			<input type="submit" class="btn btn-default" value="添加">
         </form>
  
  <h3>人员列表</h3>
@@ -39,7 +36,7 @@ $names=$pdo->query($sql);
  </div>
   </div>
 	
-<?php include'./segment/footer.php' ?>
+<?php include'../segment/footer.php' ?>
 <script type="text/javascript">
 	$(".btn-info").click(function(){
 		parent=$(this).parents()[1];
@@ -55,7 +52,7 @@ $names=$pdo->query($sql);
 		//获取tr下的name文本内容
 		name=$(parent).find('td').eq(1).text();
 		if(window.confirm("确认删除"+name+"吗？")){
- 		window.location="./admin/del_use.php?id="+id;
+ 		window.location="../cores/del_use.php?id="+id;
 		}
 	});
 
