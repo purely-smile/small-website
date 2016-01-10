@@ -1,0 +1,54 @@
+.footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 100px;
+  color: #99979C;
+  text-align: center;
+  background-color: #2A2730; }
+  .footer a {
+    text-decoration: none;
+    color: #CDBFE3;
+    display: block; }
+  .footer:hover {
+    text-decoration: underline; }
+
+body {
+  padding-top: 71px; }
+
+.item {
+  height: 450px;
+  width: auto; }
+
+#ad-carousel {
+  margin-top: -20px; }
+
+ul {
+  list-style: none; }
+
+.thumbnail {
+  float: left;
+  width: 35%; }
+
+.introduction {
+  margin-left: 37%; }
+
+hr {
+  margin-top: 0;
+  border-color: #C1BDE9; }
+
+@media screen and (max-width: 700px) {
+  .description, #ad-carousel {
+    display: none; }
+
+  h2 {
+    font-size: 20px; }
+
+  .thumbnail {
+    float: left;
+    width: 150px; }
+
+  .introduction {
+    margin-left: 160px;
+    text-align: center; } }
+
+/*# sourceMappingURL=ad.css.map */

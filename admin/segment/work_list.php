@@ -5,7 +5,7 @@ $names=$pdo->query($sql);
 //var_dump($names);
  ?>
 
-<div class="pull-right date">
+<div class=" date">
 <div>
 	
 </div>
@@ -21,7 +21,7 @@ $names=$pdo->query($sql);
 <a target="mainFrame" href="view_works_list.php?date=month" class="btn btn-default">本月</a>
 </form>
 </div>
-
+ <div class="table-responsive">
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -40,13 +40,14 @@ $names=$pdo->query($sql);
 			<td><?php echo $key['pm'];?></td>
 			<td><?php 
 			$time=$key['date'];
-			echo date('Y-m-d H:i:s',$time);
+			echo date('m-d',$time);
 			?></td>
 			<td align="center"><input class="btn btn-info" type="button" value="修改" onclick="editWorks(<?php echo $key['id'];?>)"></td>
 		</tr>
 		<?php endforeach;?>
 	</tbody>
 </table>
+</div>
 <script type="text/javascript">
 	function editWorks(id){
 		window.location="edit_work.php?id="+id;

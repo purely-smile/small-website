@@ -13,7 +13,7 @@ include'../segment/find_date.php';
 include'../segment/menu.php'; ?>
 
 
-<h3 class="pull-left"><?php 
+<h3><?php 
     if (isset($start)&&isset($end)&&isset($sy)){
         echo $sy.'年'.$sm.'月'.$sd.'日到'.$ey.'年'.$em.'月'.$ed.'日工资记录';
     }else{

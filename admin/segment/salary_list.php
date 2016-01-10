@@ -1,5 +1,5 @@
 
-<div class="pull-right date">
+<div class="date">
 <form action="find_salary_bydate.php" method="post" class="form-inline">从
 <input class="form-control" type="text" id="datepicker" name="start">到
 <!-- 日期选择器1 -->
@@ -27,7 +27,7 @@ $name_list=array_unique($name_list);
 //print_r($name_list);
 
  ?>
-
+ <div class="table-responsive">
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -70,3 +70,4 @@ $name_list=array_unique($name_list);
 		<?php endforeach;?>
 	</tbody>
 </table>
+	</div>

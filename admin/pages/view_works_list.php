@@ -7,7 +7,7 @@ $date=$_REQUEST["date"];
 
 <?php include'../segment/menu.php' ?>
 
-<h3 class="pull-left">
+<h3>
 	<?php 
 
 if($date=='today'){

@@ -4,7 +4,7 @@ include'../segment/find_date.php';
 //引入页面基础菜单模块
 include'../segment/menu.php'; ?>
 
-<h3 class="pull-left"><?php 
+<h3><?php 
     if ($start&&$end) {
         echo $sy.'年'.$sm.'月'.$sd.'日到'.$ey.'年'.$em.'月'.$ed.'日考勤记录';
     }else{

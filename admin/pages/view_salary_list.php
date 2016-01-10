@@ -12,7 +12,7 @@ $name_list=array();
 
 <?php include'../segment/menu.php' ?>
 
-<h3 class="pull-left"><?php 
+<h3><?php 
 if($date=='today'){
 echo "今天工资列表";
 }elseif ($date=='yesterday') {

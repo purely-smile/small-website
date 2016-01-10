@@ -32,6 +32,8 @@
             <li><a href="../../admin/pages/add_works_list.php" title="添加考勤" >添加考勤</a></li>
             <li><a href="../../admin/pages/view_works_list.php?date=today" title="查看考勤" >查看考勤</a></li>
             <li><a href="../../admin/pages/view_salary_list.php?date=today" title="结算工资" >结算工资</a></li>
+            <li><a href="../../admin/pages/add_article.php" title="添加文章" >添加文章</a></li>
+            <li><a href="../../admin/pages/view_article.php" title="查看文章" >查看文章</a></li>
           </ul>
         </div>
       </div>

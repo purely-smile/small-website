@@ -9,6 +9,7 @@ $names=$pdo->query($sqlname);
 
 <!-- 添加菜单片段 -->
 	<?php include'../segment/menu.php' ?>
+ <div class="table-responsive">
 	<h3>默认点击一下添加4小时</h3>
 	<table class="table table-bordered">
 		<thead>
@@ -78,7 +79,7 @@ $names=$pdo->query($sqlname);
 		<?php endforeach;?>
 		</tbody>
 	</table>
-
+</div>
 	
 <?php include'../segment/footer.php' ?>
 
