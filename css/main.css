@@ -1,0 +1,87 @@
+.footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 100px;
+  color: #99979C;
+  text-align: center;
+  background-color: #2A2730; }
+  .footer a {
+    text-decoration: none;
+    color: #CDBFE3;
+    display: block; }
+  .footer:hover {
+    text-decoration: underline; }
+
+body {
+  padding-top: 50px; }
+
+.description {
+  color: #666;
+  line-height: 23px; }
+
+.item {
+  height: 450px;
+  width: auto; }
+
+#ad-carousel {
+  margin-top: -20px; }
+
+ul {
+  list-style: none; }
+
+.thumbnail {
+  float: left;
+  width: 35%; }
+
+.course-item-content .thumbnail {
+  width: 280px;
+  overflow: hidden; }
+
+.introduction {
+  margin-left: 37%; }
+
+hr {
+  margin-top: 0;
+  border-color: #C1BDE9; }
+
+#bs-example-navbar-collapse-1{
+    position: relative;
+}
+.run{
+    position: absolute;
+    width: 86px;
+    height: 50px;
+    left: 105px;
+    background-color: #080808;
+}
+
+@media screen and (max-width: 700px) {
+  .description, #carousel {
+    display: none; }
+
+  .container {
+    padding: 0; }
+
+  h2 {
+    font-size: 20px; }
+
+  .thumbnail {
+    float: left;
+    width: 150px; }
+
+  .introduction {
+    margin-left: 160px;
+    text-align: center; }
+
+  .course-item-content .thumbnail {
+    width: 150px;
+    overflow: hidden; } }
+.course-item-content .thumbnail :hover img {
+  transform: scale(1.2);
+  transition-duration: 1s; }
+
+.course-item-content:hover, .panel:hover {
+  box-shadow: 2px 2px 8px 3px rgba(51, 122, 183, 0.5);
+  border-color: #d6d6d6; }
+
+/*# sourceMappingURL=main.css.map */

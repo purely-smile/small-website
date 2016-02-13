@@ -29,11 +29,22 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../../admin/index.php" title="系统信息" class="active">系统信息</a></li>
             <li><a href="../../admin/pages/view_use_list.php" title="员工操作" >员工操作</a></li>
+           <li class="dropdown">
+          <a href="##" data-toggle="dropdown" class="dropdown-toggle">员工考勤<span class="caret"></span></a>
+          <ul class="dropdown-menu">
             <li><a href="../../admin/pages/add_works_list.php" title="添加考勤" >添加考勤</a></li>
             <li><a href="../../admin/pages/view_works_list.php?date=today" title="查看考勤" >查看考勤</a></li>
             <li><a href="../../admin/pages/view_salary_list.php?date=today" title="结算工资" >结算工资</a></li>
+          </ul>
+       </li>
+          <li class="dropdown">
+          <a href="##" data-toggle="dropdown" class="dropdown-toggle">内容管理<span class="caret"></span></a>
+          <ul class="dropdown-menu">
             <li><a href="../../admin/pages/add_article.php" title="添加文章" >添加文章</a></li>
-            <li><a href="../../admin/pages/view_article.php" title="查看文章" >查看文章</a></li>
+            <li><a href="../../admin/pages/view_article_list.php" title="查看文章" >查看文章</a></li>
+          </ul>
+       </li>
+            <li><a href="../../admin/pages/view_visitors_list.php" title="查看访客" >查看访客</a></li>
           </ul>
         </div>
       </div>

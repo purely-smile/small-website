@@ -7,6 +7,7 @@ $filetype = $_FILES['image']['type'];
 $filetmp = $_FILES['image']['tmp_name'];
 $fileerror = $_FILES['image']['error'];
 $filesize = $_FILES['image']['size'];
+var_dump($_POST);
 //文件名处理
 $exp = explode(".",$filename);
 $ext = strtolower(end($exp));
